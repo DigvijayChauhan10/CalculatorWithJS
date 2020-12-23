@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Cal.css">
+</head>
+
+<body>
+
+    <form class="fo" action="">
+        <input type="text" class="item1" id="output" readonly placeholder="0" />
+        <input type="text" class="item2" id="out" readonly/>
+
+        <input type="button" onclick="clr()" value="C" class="item st" />
+        <input type="button" onclick="last()" value="DEL" class="item st" />
+        <input type="button" onclick="dis('/')" value="/" class="item st" />
+        <input type="button" onclick="dis('*')" value="x" class="item st" />
+
+        <input type="button" onclick="dis(7)" value="7" class="item" />
+        <input type="button" onclick="dis(8)" value="8" class="item" />
+        <input type="button" onclick="dis(9)" value="9" class="item" />
+        <input type="button" onclick="dis('-')" value="-" class="item st" />
+
+        <input type="button" onclick="dis(4)" value="4" class="item" />
+        <input type="button" onclick="dis(5)" value="5" class="item" />
+        <input type="button" onclick="dis(6)" value="6" class="item" />
+        <input type="button" onclick="dis('+')" value="+" class="item st" />
+
+        <input type="button" onclick="dis(1)" value="1" class="item" />
+        <input type="button" onclick="dis(2)" value="2" class="item" />
+        <input type="button" onclick="dis(3)" value="3" class="item" />
+        <input type="button" onclick="equal()" class="equal" value="=" class="item" />
+        <input type="button" onclick="dis(0)" class="zero" value="0" class="item" />
+
+        <input type="button" onclick="dis('.')" value="." class="item" />
+
+    </form>
+    <script>
+        function dis(val) {
+            document.getElementById("output").value += val;
+        }
+
+        function equal() {
+            var v = document.getElementById("output").value;
+            var result = eval(v);
+            document.getElementById("out").value = result;
+        }
+
+
+        function clr() {
+            document.getElementById("out").value = "";
+            document.getElementById("output").value = "";
+        }
+
+        function last() {
+            document.getElementById("output").value = document.getElementById("output").value.substr(0, document.getElementById("output").value.length - 1);
+        }
+    </script>
+</body>
+
+</html>
